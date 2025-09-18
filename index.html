@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle Financeiro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+        <img src="assets/cp2.png" alt="Logo" />
+    </div>
+    <button id="novaTransacaoBtn" class="btn-new">+ Nova transação</button>
+  </header>
+
+  <main>
+    <section class="cards">
+      <div class="card entradas">
+        <p>Entradas</p>
+        <h2 id="entradas">R$ 0,00</h2>
+      </div>
+      <div class="card saidas">
+        <p>Saídas</p>
+        <h2 id="saidas">R$ 0,00</h2>
+      </div>
+      <div class="card total">
+        <p>Total</p>
+        <h2 id="total">R$ 0,00</h2>
+      </div>
+    </section>
+
+    <section class="transactions">
+      <div class="search">
+        <input type="text" id="busca" placeholder="Busque uma transação">
+        <button id="buscarBtn">🔍</button>
+      </div>
+
+      <table id="tabela">
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Categoria</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="fecharModal" class="fechar">&times;</span>
+      <h2>Nova transação</h2>
+      <input type="text" id="descricao" placeholder="Descrição">
+      <input type="number" id="preco" placeholder="Preço" step="0.01">
+      <input type="text" id="categoria" placeholder="Categoria">
+
+      <div class="type">
+        <button class="btn-income active" data-tipo="entrada">Entrada</button>
+        <button class="btn-expense" data-tipo="saida">Saída</button>
+      </div>
+
+      <button id="cadastrarBtn" class="btn-submit">Cadastrar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
